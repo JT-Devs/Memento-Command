@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Pro Max</title>
+  </head>
+  <body id="app">
+    <main class="calculator-container">
+
+      <fieldset class="calculator-fieldset">
+        <legend>Calculadora Pro Max</legend>
+        <section class="display-section">
+          <input type="text" id="display" placeholder="0"/>
+        </section>
+
+
+        <section class="buttons-section">
+          <div class="buttons-row">
+            <button data-action="clear" class="btn control">C</button>
+            <button data-action="undo" class="btn control">Undo</button>
+            <button data-action="redo" class="btn control">Redo</button>
+            <button data-action="/" class="btn operator">÷</button>
+          </div>
+
+          <div class="buttons-row">
+            <button data-value="7" class="btn">7</button>
+            <button data-value="8" class="btn">8</button>
+            <button data-value="9" class="btn">9</button>
+            <button data-action="*" class="btn operator">×</button>
+          </div>
+
+          <div class="buttons-row">
+            <button data-value="4" class="btn">4</button>
+            <button data-value="5" class="btn">5</button>
+            <button data-value="6" class="btn">6</button>
+            <button data-action="-" class="btn operator">−</button>
+          </div>
+
+          <div class="buttons-row">
+            <button data-value="1" class="btn">1</button>
+            <button data-value="2" class="btn">2</button>
+            <button data-value="3" class="btn">3</button>
+            <button data-action="+" class="btn operator">+</button>
+          </div>
+
+          <div class="buttons-row">
+            <button data-value="0" class="btn zero">0</button>
+            <button data-value="." class="btn">.</button>
+            <button data-action="equals" class="btn equals">=</button>
+          </div>
+        </section>
+
+        <section class="history-section">
+          <h2>History</h2>
+          <ul id="history-log"></ul>
+        </section>
+
+    </fieldset>
+  </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
