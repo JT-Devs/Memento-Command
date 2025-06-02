@@ -1,0 +1,87 @@
+<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>385</x><y>140</y><w>85</w><h>25</h></coordinates><panel_attributes>Client
+--
++ main(args: String[]) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>355</y><w>105</w><h>85</h></coordinates><panel_attributes>Calculator
+--
+- currentValue: double
+--
++ add(value: double)
++ subtract(value: double)
++ multiply(value: double)
++ divide(value: double)
++ clear()
++ getValue() : double
++ save() : CalculatorMemento
++ restore(m: CalculatorMemento)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>225</y><w>110</w><h>40</h></coordinates><panel_attributes>CalculatorMemento
+--
+- state: double
+--
++ CalculatorMemento(state: double)
++ getState() : double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>205</x><y>210</y><w>125</w><h>70</h></coordinates><panel_attributes>History
+--
+- undoStack: Stack&lt;CalculatorMemento&gt;
+- redoStack: Stack&lt;CalculatorMemento&gt;
+--
++ save(m: CalculatorMemento)
++ undo() : CalculatorMemento
++ redo() : CalculatorMemento
++ canUndo() : boolean
++ canRedo() : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>140</y><w>305</w><h>95</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;170;10;20;590;20</additional_attributes></element><element><id>Relation</id><coordinates><x>145</x><y>240</y><w>70</w><h>15</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes><additional_attributes>120;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>225</y><w>120</w><h>50</h></coordinates><panel_attributes>Invoker
+--
+- history: History
+--
++ executeCommand(cmd: Command)
++ undo()
++ redo()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>315</y><w>85</w><h>40</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Command
+--
++ execute()
++ undo()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>425</x><y>160</y><w>15</w><h>75</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>270</y><w>15</w><h>55</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>665</x><y>445</y><w>160</w><h>60</h></coordinates><panel_attributes>AddCommand
+--
+- calculator: Calculator
+- value: double
+--
++ AddCommand(calculator: Calculator, value: double)
++ execute()
++ undo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>355</y><w>170</w><h>60</h></coordinates><panel_attributes>SubtractCommand
+--
+- calculator: Calculator
+- value: double
+--
++ SubtractCommand(calculator: Calculator, value: double)
++ execute()
++ undo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>265</y><w>170</w><h>60</h></coordinates><panel_attributes>MultiplyCommand
+--
+- calculator: Calculator
+- value: double
+--
++ MultiplyCommand(calculator: Calculator, value: double)
++ execute()
++ undo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>170</y><w>165</w><h>60</h></coordinates><panel_attributes>DivideCommand
+--
+- calculator: Calculator
+- value: double
+--
++ DivideCommand(calculator: Calculator, value: double)
++ execute()
++ undo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>675</x><y>90</y><w>125</w><h>60</h></coordinates><panel_attributes>ClearCommand
+--
+- calculator: Calculator
+- value: double
+--
++ ClearCommand(calculator: Calculator)
++ execute()
++ undo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>350</y><w>245</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60;330;60;330;260;470;260</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>110</y><w>95</w><h>280</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;540;10;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>595</x><y>195</y><w>75</w><h>15</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>290</y><w>80</w><h>15</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>375</y><w>80</w><h>15</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>15</x><y>145</y><w>205</w><h>260</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>390;500;10;500;10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>45</y><w>475</w><h>440</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>810;860;930;860;930;20;10;20;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>195</y><w>75</w><h>15</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>795</x><y>115</y><w>100</w><h>15</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;180;10</additional_attributes></element><element><id>Relation</id><coordinates><x>825</x><y>290</y><w>70</w><h>15</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>825</x><y>380</y><w>70</w><h>15</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>325</x><y>240</y><w>55</w><h>15</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>260</y><w>130</w><h>130</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;240;240;240</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>400</y><w>365</w><h>75</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;430;10;430;130;710;130</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>100</y><w>165</w><h>315</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;610;10;10;310;10</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>205</y><w>150</w><h>15</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;280;10</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>285</y><w>150</w><h>15</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;280;10</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>365</y><w>150</w><h>15</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;280;10</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>275</y><w>15</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element></diagram>
