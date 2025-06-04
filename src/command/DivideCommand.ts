@@ -1,6 +1,6 @@
 import type { Command } from "./Command";
-import { Calculator } from "@/memento/Calculator";
-import { CalculatorMemento } from "@/memento/CalculatorMemento";
+import { Calculator } from "../memento/Calculator";
+import { CalculatorMemento } from "../memento/CalculatorMemento";
 
 export class DivideCommand implements Command {
     private calculator: Calculator;

@@ -7,6 +7,14 @@
     <title>Calculadora Pro Max</title>
   </head>
   <body id="app">
+
+    <h1>
+      🧮 Calculadora Interactiva (Command + Memento)
+    </h1>
+
+    <h2>Comandos disponibles: sumar, restar, multiplicar, dividir, clear, undo, redo, value, exit</h2>
+
+
     <main class="calculator-container">
 
       <fieldset class="calculator-fieldset">
@@ -48,17 +56,20 @@
           <div class="buttons-row">
             <button data-value="0" class="btn zero">0</button>
             <button data-value="." class="btn">.</button>
-            <button data-action="equals" class="btn equals">=</button>
+            <button data-action="equals" class="btn equals" id="equals">=</button>
           </div>
         </section>
 
-        <section class="history-section">
+        <button popovertarget="history-section">Open History</button>
+      
+        <section popover id="history-section" class="history-section">
           <h2>History</h2>
-          <ul id="history-log"></ul>
+          <ul id="history-log"></ul>          
         </section>
 
     </fieldset>
   </main>
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/Client.ts"></script>
   </body>
 </html>

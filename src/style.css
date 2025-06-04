@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  max-height: 90vh;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,6 +29,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -82,6 +88,27 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+main {
+  height: 75dvh;
+}
+fieldset {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
+}
+
+section.buttons-section {
+  height: 75%;  
+}
+.buttons-row{
+  height: 20%;
+}
+.btn {
+  height: 85%;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -93,4 +120,9 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.history-section {
+  height: 75vh;
+  width: 25vw;
 }
