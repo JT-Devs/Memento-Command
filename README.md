@@ -12,6 +12,7 @@ Según el problema:
 * Felipe Cardenas Mora 20231020145
 * Yuber Alejandro Bohorquez Roa 20231020195
 * David Neira 20192020086
+* Juan Felipe Chibuque López 20232020093
 
 ***
 
